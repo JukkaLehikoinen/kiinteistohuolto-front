@@ -39,9 +39,7 @@ function App() {
   return (
    
     <div className="App">
-       <div className="Firma">
-      <p>Demofirma <br></br> Pariisinkatu 8 <br></br> 00560 HELSINKI</p>
-    </div>
+      
       <h1>Kiinteistöhuoltoa</h1>
       <Button color="primary" onClick={showCustomers}>Asiakkaat</Button>
       <Button color="primary" onClick={showMechanics}>Asentajat</Button>
