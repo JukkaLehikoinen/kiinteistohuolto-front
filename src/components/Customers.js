@@ -13,7 +13,8 @@ export default function CustomersList(props) {
     const [customer, setCustomer] = useState();
     const [display, setDisplay] = useState(0);
     const [customerid, setCustomerid] = useState();
-    
+
+    const [services, setServices] = useState('');
     
     useEffect(() => {
         Fetching();
@@ -96,23 +97,47 @@ const addService = (customer,custoId,customero,mechId,mechName,mechEmail,mechPho
 }
 
 
+
 const showActivity = (link) => {
+    
      setCustomerid(link.customerid)
    /* console.log(link._links.services.href) */
-     fetch('https://kiinteistohuolto.herokuapp.com/customers/'+link.customerid)
+     fetch('https://kiinteistohuolto.herokuapp.com/customers/'+link.customerid
+    )
     //fetch(props.customer.links[2].href)
     .then(response => response.json())
     .then(data => setCustomer(data))
     .catch(err => console.error(err))
+
+
     
+    
+        fetch('https://kiinteistohuolto.herokuapp.com/services/')
+        .then(response => response.json())
+        .then(data=> setServices(data))
+        .catch(err => console.error(err))
 
-
-    fetch('https://kiinteistohuolto.herokuapp.com/api/customers/'+link.customerid+'/services')
+    
+    
+    fetch('https://kiinteistohuolto.herokuapp.com/api/customers/'+link.customerid+'/services', {
+        headers:{'Access-Control-Allow-Origin':'*'}
+       })
     .then(response => response.json())
-    .then(data => setCustoService(data._embedded.services))
+    .then(data =>  setCustoService(data._embedded.services)
+     )
     .catch(err => console.error(err))
     
     setDisplay(1); 
+}
+let customerList = [];
+    if (services !== '') {
+for (let i = 0; i < services.length; i++) {
+    if (services[i].customer.customerid===customerid) {
+        console.log(services[i].customer.name)
+        customerList = [...customerList,services[i]]
+        
+    }
+}
 }
 
 const showFilteredFormat =(row) =>{
@@ -124,6 +149,7 @@ const showFilteredFormat =(row) =>{
     
    }
 
+  
 
 if (display !==1) {
     return (
@@ -158,11 +184,11 @@ if (display !==1) {
         
         
         
-        
         return (
             <div>
                 <AddService customerid={customerid} addService={addService}/>
-                <ReactTable defaultPageSize={10} filterable={true} data={custoservice} columns={columns}/>
+                {/* <ReactTable defaultPageSize={10} filterable={true} data={custoservice} columns={columns}/> */}
+                <ReactTable defaultPageSize={10} filterable={true} data={customerList} columns={columns}/>
             </div>
         )
     }

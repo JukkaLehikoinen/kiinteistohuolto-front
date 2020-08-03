@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import moment from 'moment';
+
 
 
 export default function Main() {
@@ -16,7 +15,6 @@ export default function Main() {
 
             <h4>BackEnd on tehty H2consolella joka tyhjenee kun serveri uinahtaa.<br></br>
             BackEnd on toteutettu Maven Projektina Spring boot, kielenä Java. FrontEnd tehty Reactilla</h4>
-            <h4>CrossOrigin Headereita ei ole tehty joten suositellaan selaimeen lisäosaa jolla voidaan muuttaa CORS -asetuksia</h4>
         </div>
     )
 
