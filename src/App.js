@@ -4,6 +4,7 @@ import './App.css';
 import Services from './components/Services';
 import Customers from './components/Customers';
 import Mechanics from './components/Mechanics';
+import MainPage from './components/MainPage';
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
   const showServices = () => {
     setTask(0);
   }
+
+  const showInfo = () => {
+    setTask(3);
+  }
   return (
    
     <div className="App">
@@ -43,8 +48,10 @@ function App() {
       <Button color="primary" onClick={showServices}>Huoltotyöt</Button>
       {task ===0 && <Services /> ||
       task === 1 && <Mechanics /> ||
-      task === 2 && <Customers />
+      task === 2 && <Customers /> ||
+      task === 3 && <MainPage />
       }
+      <br></br><Button color="primary" onClick={showInfo}>Info</Button>
     </div>
   );
 }
