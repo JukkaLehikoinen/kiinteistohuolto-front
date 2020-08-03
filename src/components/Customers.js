@@ -21,7 +21,9 @@ export default function CustomersList(props) {
     }, []) 
   
     const Fetching = () =>{
-        fetch('https://kiinteistohuolto.herokuapp.com/customers')
+        fetch('https://kiinteistohuolto.herokuapp.com/customers', {
+            headers:{'Access-Control-Allow-Origin':'*'}
+           })
         //fetch('https://kiinteistohuolto.herokuapp.com/api/customers')
         .then(response => response.json())
         .then(data => setCustomers(data))
@@ -63,7 +65,7 @@ export default function CustomersList(props) {
 
     const addCusto = (customer) => {      
         fetch('http://kiinteistohuolto.herokuapp.com/addcustomer', {method: 'POST',
-        headers:{'Content-Type':'application/json'
+        headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*'
         }, 
         body:JSON.stringify(customer)        
 }
@@ -85,7 +87,7 @@ const addService = (customer,custoId,customero,mechId,mechName,mechEmail,mechPho
         mechanic:{mechanicid:mechId, name:mechName, email:mechEmail,phone:mechPhone}}
     console.log(service)
     fetch('http://kiinteistohuolto.herokuapp.com/addservice', {method: 'POST',
-    headers:{'Content-Type':'application/json'
+    headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*'
     }, 
     body:JSON.stringify(service)        
 }
@@ -103,7 +105,9 @@ const showActivity = (link) => {
      setCustomerid(link.customerid)
    /* console.log(link._links.services.href) */
      fetch('https://kiinteistohuolto.herokuapp.com/customers/'+link.customerid
-    )
+     , {
+        headers:{'Access-Control-Allow-Origin':'*'}
+       })
     //fetch(props.customer.links[2].href)
     .then(response => response.json())
     .then(data => setCustomer(data))
@@ -112,7 +116,9 @@ const showActivity = (link) => {
 
     
     
-        fetch('https://kiinteistohuolto.herokuapp.com/services/')
+        fetch('https://kiinteistohuolto.herokuapp.com/services/', {
+            headers:{'Access-Control-Allow-Origin':'*'}
+           })
         .then(response => response.json())
         .then(data=> setServices(data))
         .catch(err => console.error(err))
@@ -133,7 +139,6 @@ let customerList = [];
     if (services !== '') {
 for (let i = 0; i < services.length; i++) {
     if (services[i].customer.customerid===customerid) {
-        console.log(services[i].customer.name)
         customerList = [...customerList,services[i]]
         
     }
