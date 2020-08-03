@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/kiinteistohuolto-front/static/css/main.7372ad34.chunk.css",
-    "main.js": "/kiinteistohuolto-front/static/js/main.a7f475a5.chunk.js",
-    "main.js.map": "/kiinteistohuolto-front/static/js/main.a7f475a5.chunk.js.map",
+    "main.css": "/kiinteistohuolto-front/static/css/main.af0eaf77.chunk.css",
+    "main.js": "/kiinteistohuolto-front/static/js/main.d600c269.chunk.js",
+    "main.js.map": "/kiinteistohuolto-front/static/js/main.d600c269.chunk.js.map",
     "runtime-main.js": "/kiinteistohuolto-front/static/js/runtime-main.61baca62.js",
     "runtime-main.js.map": "/kiinteistohuolto-front/static/js/runtime-main.61baca62.js.map",
     "static/css/2.bfa46653.chunk.css": "/kiinteistohuolto-front/static/css/2.bfa46653.chunk.css",
-    "static/js/2.40f5dabc.chunk.js": "/kiinteistohuolto-front/static/js/2.40f5dabc.chunk.js",
-    "static/js/2.40f5dabc.chunk.js.map": "/kiinteistohuolto-front/static/js/2.40f5dabc.chunk.js.map",
+    "static/js/2.778af7fc.chunk.js": "/kiinteistohuolto-front/static/js/2.778af7fc.chunk.js",
+    "static/js/2.778af7fc.chunk.js.map": "/kiinteistohuolto-front/static/js/2.778af7fc.chunk.js.map",
     "index.html": "/kiinteistohuolto-front/index.html",
-    "precache-manifest.1c5be23d7deedb409f9ec3dea81aa0b2.js": "/kiinteistohuolto-front/precache-manifest.1c5be23d7deedb409f9ec3dea81aa0b2.js",
+    "precache-manifest.69d71bc50c889583317f5d97b16a9523.js": "/kiinteistohuolto-front/precache-manifest.69d71bc50c889583317f5d97b16a9523.js",
     "service-worker.js": "/kiinteistohuolto-front/service-worker.js",
     "static/css/2.bfa46653.chunk.css.map": "/kiinteistohuolto-front/static/css/2.bfa46653.chunk.css.map",
-    "static/css/main.7372ad34.chunk.css.map": "/kiinteistohuolto-front/static/css/main.7372ad34.chunk.css.map",
-    "static/js/2.40f5dabc.chunk.js.LICENSE.txt": "/kiinteistohuolto-front/static/js/2.40f5dabc.chunk.js.LICENSE.txt"
+    "static/css/main.af0eaf77.chunk.css.map": "/kiinteistohuolto-front/static/css/main.af0eaf77.chunk.css.map",
+    "static/js/2.778af7fc.chunk.js.LICENSE.txt": "/kiinteistohuolto-front/static/js/2.778af7fc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.61baca62.js",
     "static/css/2.bfa46653.chunk.css",
-    "static/js/2.40f5dabc.chunk.js",
-    "static/css/main.7372ad34.chunk.css",
-    "static/js/main.a7f475a5.chunk.js"
+    "static/js/2.778af7fc.chunk.js",
+    "static/css/main.af0eaf77.chunk.css",
+    "static/js/main.d600c269.chunk.js"
   ]
 }
