@@ -31,7 +31,7 @@ export default function AddMechanic(props) {
         <div>
         <h1> </h1>
         <Button style={{margin:10}} variant="outlined" color="primary" onClick={handleClickOpen}>
-        Lisää Asenataja
+        Lisää Asentaja
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Uusi asentaja</DialogTitle>

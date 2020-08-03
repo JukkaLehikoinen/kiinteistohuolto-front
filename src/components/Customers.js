@@ -64,7 +64,7 @@ export default function CustomersList(props) {
     ]
 
     const addCusto = (customer) => {      
-        fetch('http://kiinteistohuolto.herokuapp.com/addcustomer', {method: 'POST',
+        fetch('https://kiinteistohuolto.herokuapp.com/addcustomer', {method: 'POST',
         headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*'
         }, 
         body:JSON.stringify(customer)        
@@ -85,8 +85,8 @@ const addService = (customer,custoId,customero,mechId,mechName,mechEmail,mechPho
         customer:{customerid:customero.customerid,name:customero.name,address:customero.address, 
         ycode:customero.ycode,person:customero.person,telephone:customero.telephone,email:customero.email},
         mechanic:{mechanicid:mechId, name:mechName, email:mechEmail,phone:mechPhone}}
-    console.log(service)
-    fetch('http://kiinteistohuolto.herokuapp.com/addservice', {method: 'POST',
+//    console.log(service)
+    fetch('https://kiinteistohuolto.herokuapp.com/addservice', {method: 'POST',
     headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*'
     }, 
     body:JSON.stringify(service)        
