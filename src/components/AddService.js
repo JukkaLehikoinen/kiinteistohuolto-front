@@ -26,7 +26,9 @@ export default function AddService({addService, customerid}) {
   }, []) 
 
   const Fetching = () =>{
-      fetch('https://kiinteistohuolto.herokuapp.com/customers/'+customerid)
+      fetch('https://kiinteistohuolto.herokuapp.com/customers/'+customerid, {
+        headers:{'Access-Control-Allow-Origin':'*'}
+       })
       .then(response => response.json())
       .then(data => {setName(data.name)
       setAddress(data.address)
@@ -40,7 +42,9 @@ export default function AddService({addService, customerid}) {
     let time =moment().format("HH:mm")
     let date = moment().format("YYYY-MM-DD")
 
-      fetch('https://kiinteistohuolto.herokuapp.com/mechanics')
+      fetch('https://kiinteistohuolto.herokuapp.com/mechanics', {
+        headers:{'Access-Control-Allow-Origin':'*'}
+       })
       .then(response => response.json())
       .then(data => {
           setMechanics(data)

@@ -119,13 +119,13 @@ const showActivity = (link) => {
 
     
     
-    fetch('https://kiinteistohuolto.herokuapp.com/api/customers/'+link.customerid+'/services', {
+   /*  fetch('https://kiinteistohuolto.herokuapp.com/api/customers/'+link.customerid+'/services', {
         headers:{'Access-Control-Allow-Origin':'*'}
        })
     .then(response => response.json())
     .then(data =>  setCustoService(data._embedded.services)
      )
-    .catch(err => console.error(err))
+    .catch(err => console.error(err)) */
     
     setDisplay(1); 
 }

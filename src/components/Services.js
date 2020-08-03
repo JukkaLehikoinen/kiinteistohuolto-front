@@ -16,7 +16,9 @@ export default function ServicesList() {
     }, []) 
   
     const Fetching = () =>{
-      fetch('https://kiinteistohuolto.herokuapp.com/services')
+      fetch('https://kiinteistohuolto.herokuapp.com/services', {
+        headers:{'Access-Control-Allow-Origin':'*'}
+       })
         .then(response => response.json())
         .then(data => setServices(data))
         .catch(err => console.error(err))  

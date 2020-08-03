@@ -15,7 +15,9 @@ export default function MechanicsList() {
     }, []) 
   
     const Fetching = () =>{
-      fetch('https://kiinteistohuolto.herokuapp.com/mechanics')
+      fetch('https://kiinteistohuolto.herokuapp.com/mechanics', {
+        headers:{'Access-Control-Allow-Origin':'*'}
+       })
         .then(response => response.json())
         .then(data => setMechanics(data))
         .catch(err => console.error(err))  
@@ -43,7 +45,7 @@ export default function MechanicsList() {
         
             
             fetch('http://kiinteistohuolto.herokuapp.com/addmechanic', {method: 'POST',
-            headers:{'Content-Type':'application/json'
+            headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*'
             }, 
             body:JSON.stringify(mechanic)
             
