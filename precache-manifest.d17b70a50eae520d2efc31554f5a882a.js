@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ce11d7082fb56abe2775d59f8ce83598",
+    "revision": "a6734f65ae7bcf4de683f028395f7662",
     "url": "/kiinteistohuolto-front/index.html"
   },
   {
-    "revision": "31ebfcedebd8e6ae0056",
+    "revision": "21f9f08969a535171188",
     "url": "/kiinteistohuolto-front/static/css/2.bfa46653.chunk.css"
   },
   {
-    "revision": "c2c28c370aab64a573ba",
+    "revision": "52f67e029d11eb8d72d3",
     "url": "/kiinteistohuolto-front/static/css/main.af0eaf77.chunk.css"
   },
   {
-    "revision": "31ebfcedebd8e6ae0056",
-    "url": "/kiinteistohuolto-front/static/js/2.3497b53a.chunk.js"
+    "revision": "21f9f08969a535171188",
+    "url": "/kiinteistohuolto-front/static/js/2.da8b8001.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/kiinteistohuolto-front/static/js/2.3497b53a.chunk.js.LICENSE.txt"
+    "url": "/kiinteistohuolto-front/static/js/2.da8b8001.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c2c28c370aab64a573ba",
-    "url": "/kiinteistohuolto-front/static/js/main.b55a612e.chunk.js"
+    "revision": "52f67e029d11eb8d72d3",
+    "url": "/kiinteistohuolto-front/static/js/main.3232f568.chunk.js"
   },
   {
     "revision": "19e0a16b7f2ad7bcbe60",
