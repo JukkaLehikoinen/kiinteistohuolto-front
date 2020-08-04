@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactTable from 'react-table-v6';
 import 'react-table-v6/react-table.css';
-import Button from '@material-ui/core/Button';
 import AddMechanic from './AddMechanic';
 
 
@@ -59,9 +58,6 @@ export default function MechanicsList() {
 
             .catch(err => console.error(err))
     }
-
-
-
 
     return (
         <div>

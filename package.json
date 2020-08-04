@@ -1,5 +1,5 @@
 {
-  "homepage":"http://JukkaLehikoinen.hithub.io/kiinteistohuolto-front",
+  "homepage": "http://JukkaLehikoinen.hithub.io/kiinteistohuolto-front",
   "name": "kiinteistohuolto",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +12,7 @@
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-table-v6": "^6.8.6"
   },

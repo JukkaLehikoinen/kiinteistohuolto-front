@@ -85,11 +85,16 @@ export default function AddService({ addService, customerid }) {
   }
 
   const durationChanged = (event) => {
+    let firstNumber = event.target.value.charAt(0);
+    let secondNumber = event.target.value.charAt(1);
+    if (firstNumber === '0' && secondNumber !== '') {
+      event.target.value = event.target.value.substr(1);
+      console.log(event.target.value)
+    }
     if (event.target.value < 1) {
       event.target.value = 0;
     }
     setService({ ...service, [event.target.name]: event.target.value });
-
   }
 
 

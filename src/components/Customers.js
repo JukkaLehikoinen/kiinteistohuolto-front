@@ -9,7 +9,6 @@ import moment from 'moment';
 export default function CustomersList(props) {
 
     const [customers, setCustomers] = useState();
-    const [custoservice, setCustoService] = useState();
     const [customer, setCustomer] = useState();
     const [display, setDisplay] = useState(0);
     const [customerid, setCustomerid] = useState();
@@ -104,8 +103,6 @@ export default function CustomersList(props) {
             .catch(err => console.error(err))
     }
 
-
-
     const showActivity = (link) => {
 
         setCustomerid(link.customerid)
@@ -176,8 +173,6 @@ export default function CustomersList(props) {
                 accessor: 'comment'
             }
         ]
-
-
 
         return (
             <div>
