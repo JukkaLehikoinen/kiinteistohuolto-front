@@ -6,38 +6,45 @@ import Mechanics from './components/Mechanics';
 import MainPage from './components/MainPage';
 import { BrowserRouter, Route } from "react-router-dom";
 import Link from '@material-ui/core/Link';
-
+import { render } from '@testing-library/react';
+import Button from '@material-ui/core/Button';
 
 
 function App() {
+  const [task, setTask] = React.useState(1);
 
-  var PORT = process.env.PORT || 5000;
-var express = require('express');
-var app = express();
+  const showInfo = () => {
+    setTask(1)
+  }
 
-var http = require('http');
-var server = http.Server(app);
-
-app.use(express.static('client'));
-
-server.listen(PORT, function() {
-  console.log('Chat server running');
-});
-
-var io = require('socket.io')(server);
-
-io.on('connection', function(socket) {
-  socket.on('message', function(msg) {
-    io.emit('message', msg);
-  });
-});
+  const showCustomers = () => {
+    setTask(2)
+    
+  }
+  const showMechanics = () => {
+    setTask(3)
+  }
+  const showServices = () => {
+    setTask(4)
+  }
 
   return (
 
     <div className="App">
 
       <h1>Kiinteistöhuoltoa</h1>
-      <Link color="primary" href="/MainPage" onClick={MainPage}>INFO</Link>{' '}
+
+      <Button color="primary" onClick={showInfo} >Info</Button>
+      <Button color="primary" onClick={showCustomers} >Asiakkaat</Button>
+      <Button color="primary" onClick={showMechanics} >Asentajat</Button>
+      <Button color="primary" onClick={showServices} >Huollot</Button>
+
+      {task===1 && <MainPage /> ||
+      task===2 && <Customers /> ||
+      task===3 && <Mechanics /> ||
+      task===4 && <Services />}
+
+      {/* <Link color="primary" href="/MainPage" onClick={MainPage}>INFO</Link>{' '}
       <Link color="primary" href="/Customers" onClick={Customers}>ASIAKKAAT</Link>{' '}
       <Link color="primary" href="/Mechanics" onClick={Mechanics}>ASENTAJAT</Link>{' '}
       <Link color="primary" href="/Services" onClick={Services}>HUOLTOTYÖT</Link>{' '}
@@ -48,7 +55,7 @@ io.on('connection', function(socket) {
           <Route path="/Services" component={Services} />
           <Route path="/Customers" component={Customers} />
         </div>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
