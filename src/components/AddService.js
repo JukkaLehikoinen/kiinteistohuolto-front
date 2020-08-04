@@ -89,7 +89,6 @@ export default function AddService({ addService, customerid }) {
     let secondNumber = event.target.value.charAt(1);
     if (firstNumber === '0' && secondNumber !== '') {
       event.target.value = event.target.value.substr(1);
-      console.log(event.target.value)
     }
     if (event.target.value < 1) {
       event.target.value = 0;
