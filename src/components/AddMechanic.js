@@ -7,30 +7,30 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function AddMechanic(props) {
-    const [open, setOpen] = React.useState(false);
-    const [mechanic, setMechanic] = React.useState({name:'', email:'', phone:''})
+  const [open, setOpen] = React.useState(false);
+  const [mechanic, setMechanic] = React.useState({ name: '', email: '', phone: '' })
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    }
+  const handleClickOpen = () => {
+    setOpen(true);
+  }
 
-    const handleClose = () => {
-        props.addMech(mechanic);
-        setOpen(false);
-    }
+  const handleClose = () => {
+    props.addMech(mechanic);
+    setOpen(false);
+  }
 
-    const handleCancel = () => {
-        setOpen(false);
-    }
+  const handleCancel = () => {
+    setOpen(false);
+  }
 
-    const inputChanged = (event) => {
-        setMechanic({...mechanic, [event.target.name]: event.target.value});
-    }
+  const inputChanged = (event) => {
+    setMechanic({ ...mechanic, [event.target.name]: event.target.value });
+  }
 
-    return(
-        <div>
-        <h1> </h1>
-        <Button style={{margin:10}} variant="outlined" color="primary" onClick={handleClickOpen}>
+  return (
+    <div>
+      <h1> </h1>
+      <Button style={{ margin: 10 }} variant="outlined" color="primary" onClick={handleClickOpen}>
         Lisää Asentaja
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -46,7 +46,7 @@ export default function AddMechanic(props) {
             label="Nimi"
             fullWidth
           />
-           <TextField
+          <TextField
             margin="dense"
             id="email"
             name="email"
@@ -64,7 +64,7 @@ export default function AddMechanic(props) {
             label="Puhelin"
             fullWidth
           />
-          
+
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCancel} color="primary">
@@ -76,6 +76,6 @@ export default function AddMechanic(props) {
         </DialogActions>
       </Dialog>
 
-        </div>
-    )
+    </div>
+  )
 }

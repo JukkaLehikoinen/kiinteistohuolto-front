@@ -10,121 +10,122 @@ import FormControl from '@material-ui/core/FormControl';
 import { NativeSelect } from '@material-ui/core';
 import moment from 'moment';
 
-export default function AddService({addService, customerid}) {
-    const [open, setOpen] = React.useState(false);
-    const [service, setService] = React.useState({date:'',time:'',duration: 0.0,task:'',comment:'', mechanic:''})
-    const [name, setName] = useState();
-    const [address, setAddress] = useState();
-    const [person, setPerson] = useState();
-    const [mechanics, setMechanics] = useState([])
-    const [customer, setCustomer] = useState();
-   
-    
-    useEffect(() => {
-      Fetching();
-      FetchMechs();
-  }, []) 
+export default function AddService({ addService, customerid }) {
+  const [open, setOpen] = React.useState(false);
+  const [service, setService] = React.useState({ date: '', time: '', duration: 0.0, task: '', comment: '', mechanic: '' })
+  const [name, setName] = useState();
+  const [address, setAddress] = useState();
+  const [person, setPerson] = useState();
+  const [mechanics, setMechanics] = useState([])
+  const [customer, setCustomer] = useState();
 
-  const Fetching = () =>{
-      fetch('https://kiinteistohuolto.herokuapp.com/customers/'+customerid, {
-        headers:{'Access-Control-Allow-Origin':'*'}
-       })
-      .then(response => response.json())
-      .then(data => {setName(data.name)
-      setAddress(data.address)
-      setPerson(data.person)
-      setCustomer(data)
-      })
-      .catch(err => console.error(err))
-    }
-  const FetchMechs = () =>{
-    
-    let time =moment().format("HH:mm")
-    let date = moment().format("YYYY-MM-DD")
 
-      fetch('https://kiinteistohuolto.herokuapp.com/mechanics', {
-        headers:{'Access-Control-Allow-Origin':'*'}
-       })
+  useEffect(() => {
+    Fetching();
+    FetchMechs();
+  }, [])
+
+  const Fetching = () => {
+    fetch('https://kiinteistohuolto.herokuapp.com/customers/' + customerid, {
+      headers: { 'Access-Control-Allow-Origin': '*' }
+    })
       .then(response => response.json())
       .then(data => {
-          setMechanics(data)
-          setService({...service, mechanic: data[0].mechanicid, date:date, time:time})
+        setName(data.name)
+        setAddress(data.address)
+        setPerson(data.person)
+        setCustomer(data)
       })
-      .catch(err => console.error(err))  
-      
+      .catch(err => console.error(err))
+  }
+  const FetchMechs = () => {
+
+    let time = moment().format("HH:mm")
+    let date = moment().format("YYYY-MM-DD")
+
+    fetch('https://kiinteistohuolto.herokuapp.com/mechanics', {
+      headers: { 'Access-Control-Allow-Origin': '*' }
+    })
+      .then(response => response.json())
+      .then(data => {
+        setMechanics(data)
+        setService({ ...service, mechanic: data[0].mechanicid, date: date, time: time })
+      })
+      .catch(err => console.error(err))
+
   }
 
-    const handleClickOpen = () => {
-        setOpen(true);
+  const handleClickOpen = () => {
+    setOpen(true);
+  }
+
+  const handleClose = () => {
+    //date:'',time:'',duration: '',task:'',comment:'', mechanic:''
+
+    if (service.date === '' || service.time === '' || service.task === '') {
+      alert("Täytä pakolliset kentät")
+    } else {
+
+      const isMechanicNumber = (element) => element === service.mechanic;
+      let mIndex = mechId.findIndex(isMechanicNumber);
+
+
+      addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]);
+      setOpen(false);
     }
+  }
 
-    const handleClose = () => {
-      //date:'',time:'',duration: '',task:'',comment:'', mechanic:''
-      
-      if (service.date==='' || service.time==='' ||service.task==='') {
-        alert("Täytä pakolliset kentät")
-      } else {
-        
-        const isMechanicNumber = (element) => element === service.mechanic;
-        let mIndex=mechId.findIndex(isMechanicNumber);
 
-        
-        addService(service,customerid,customer,mechId[mIndex],mechName[mIndex],mechEmail[mIndex],mechPhone[mIndex]);
-        setOpen(false);
-      }
+  const handleCancel = () => {
+    setOpen(false);
+  }
+
+  const inputChanged = (event) => {
+    setService({ ...service, [event.target.name]: event.target.value });
+  }
+
+  const durationChanged = (event) => {
+    if (event.target.value < 1) {
+      event.target.value = 0;
     }
-  
+    setService({ ...service, [event.target.name]: event.target.value });
 
-    const handleCancel = () => {
-        setOpen(false);
-    }
+  }
 
-    const inputChanged = (event) => {
-        setService({...service, [event.target.name]: event.target.value});
-    }
 
-    const durationChanged = (event) => {
-        if (event.target.value < 1) {
-          event.target.value=0;
-        }
-        setService({...service, [event.target.name]: event.target.value});
-        
-    }
 
-    
+  let mechName = [];
+  let mechId = [];
+  let mechEmail = [];
+  let mechPhone = [];
 
-    let mechName = [];
-    let mechId = [];
-    let mechEmail=[];
-    let mechPhone=[];
+  for (let i = 0; i < mechanics.length; i++) {
+    mechName = [...mechName, mechanics[i].name]
+    mechId = [...mechId, mechanics[i].mechanicid]
+    mechEmail = [...mechEmail, mechanics[i].email]
+    mechPhone = [...mechPhone, mechanics[i].phone]
 
-    for (let i = 0; i < mechanics.length; i++) {
-      mechName= [...mechName, mechanics[i].name]
-      mechId = [...mechId, mechanics[i].mechanicid]
-      mechEmail = [...mechEmail, mechanics[i].email]
-      mechPhone = [...mechPhone, mechanics[i].phone]
-    
-    }
-  
-    const mechs = mechName.map((mech) => 
+  }
+
+  const mechs = mechName.map((mech) =>
     <option value={mech}>{mech}</option>
-         )
+  )
 
-    
-         const mechChanged = (event) => {
-          for (let i = 0; i < mechanics.length; i++) {
-            if (event.target.value===mechanics[i].name) {
-              setService({...service, [event.target.name]: mechanics[i].mechanicid});
-            }
-            
-          }
+
+  const mechChanged = (event) => {
+    for (let i = 0; i < mechanics.length; i++) {
+      if (event.target.value === mechanics[i].name) {
+        setService({ ...service, [event.target.name]: mechanics[i].mechanicid });
       }
-    
-   
-    return(
-        <div>
-        <h1> </h1>
-        <Button style={{margin:10}} variant="outlined" color="primary" onClick={handleClickOpen}>
+
+    }
+  }
+
+
+  return (
+    <div>
+      <h1> </h1>
+      <Button style={{ margin: 10 }} variant="outlined" color="primary" onClick={handleClickOpen}>
         Lisää uusi huoltotyö
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -141,10 +142,10 @@ export default function AddService({addService, customerid}) {
             onChange={inputChanged}
             label=""
             fullWidth
-            
+
           />
-           <TextField
-           required
+          <TextField
+            required
             type="time"
             margin="dense"
             id="time"
@@ -177,7 +178,7 @@ export default function AddService({addService, customerid}) {
             label="Työnkuvaus"
             fullWidth
           />
-           <TextField
+          <TextField
             margin="dense"
             id="comment"
             name="comment"
@@ -187,26 +188,26 @@ export default function AddService({addService, customerid}) {
             fullWidth
           />
           <FormControl >
-                        <InputLabel id="inputLabel">Asentaja</InputLabel>
-                        <NativeSelect
-                            id="mechanic"
-                            onChange={mechChanged}
-                            inputProps={{
-                                name: 'mechanic'
-                              }}
-                        >
-                          {mechs}
-                           
-                            </NativeSelect>
-                        
-                    </FormControl>
+            <InputLabel id="inputLabel">Asentaja</InputLabel>
+            <NativeSelect
+              id="mechanic"
+              onChange={mechChanged}
+              inputProps={{
+                name: 'mechanic'
+              }}
+            >
+              {mechs}
+
+            </NativeSelect>
+
+          </FormControl>
           <TextField
             disabled
             margin="dense"
             id="name"
             name="name"
             value=''
-            label= {name}
+            label={name}
             fullWidth
           />
           <TextField
@@ -227,7 +228,7 @@ export default function AddService({addService, customerid}) {
             label={person}
             fullWidth
           />
-          
+
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCancel} color="primary">
@@ -239,6 +240,6 @@ export default function AddService({addService, customerid}) {
         </DialogActions>
       </Dialog>
 
-        </div>
-    )
+    </div>
+  )
 }

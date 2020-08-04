@@ -7,30 +7,30 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function AddCustomer(props) {
-    const [open, setOpen] = React.useState(false);
-    const [customer, setCustomer] = React.useState({name:'',address:'',ycode:'',person:'', telephone:'', email:'' })
+  const [open, setOpen] = React.useState(false);
+  const [customer, setCustomer] = React.useState({ name: '', address: '', ycode: '', person: '', telephone: '', email: '' })
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    }
+  const handleClickOpen = () => {
+    setOpen(true);
+  }
 
-    const handleClose = () => {
-        props.addCusto(customer);
-        setOpen(false);
-    }
+  const handleClose = () => {
+    props.addCusto(customer);
+    setOpen(false);
+  }
 
-    const handleCancel = () => {
-        setOpen(false);
-    }
+  const handleCancel = () => {
+    setOpen(false);
+  }
 
-    const inputChanged = (event) => {
-        setCustomer({...customer, [event.target.name]: event.target.value});
-    }
+  const inputChanged = (event) => {
+    setCustomer({ ...customer, [event.target.name]: event.target.value });
+  }
 
-    return(
-        <div>
-        <h1> </h1>
-        <Button style={{margin:10}} variant="outlined" color="primary" onClick={handleClickOpen}>
+  return (
+    <div>
+      <h1> </h1>
+      <Button style={{ margin: 10 }} variant="outlined" color="primary" onClick={handleClickOpen}>
         Lisää Asiakas
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -45,9 +45,9 @@ export default function AddCustomer(props) {
             onChange={inputChanged}
             label="Nimi"
             fullWidth
-            
+
           />
-           <TextField
+          <TextField
             margin="dense"
             id="address"
             name="address"
@@ -65,7 +65,7 @@ export default function AddCustomer(props) {
             label="Y-tunnus"
             fullWidth
           />
-           <TextField
+          <TextField
             margin="dense"
             id="person"
             name="person"
@@ -74,7 +74,7 @@ export default function AddCustomer(props) {
             label="Yhteyshenkilö"
             fullWidth
           />
-           <TextField
+          <TextField
             margin="dense"
             id="telephone"
             name="telephone"
@@ -83,7 +83,7 @@ export default function AddCustomer(props) {
             label="Puhelin"
             fullWidth
           />
-           <TextField
+          <TextField
             margin="dense"
             id="email"
             name="email"
@@ -92,7 +92,7 @@ export default function AddCustomer(props) {
             label="Sähköposti"
             fullWidth
           />
-          
+
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCancel} color="primary">
@@ -104,6 +104,6 @@ export default function AddCustomer(props) {
         </DialogActions>
       </Dialog>
 
-        </div>
-    )
+    </div>
+  )
 }
