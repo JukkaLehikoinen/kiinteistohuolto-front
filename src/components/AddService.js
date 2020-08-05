@@ -62,9 +62,9 @@ export default function AddService({ addService, customerid }) {
   const handleClose = () => {
     //date:'',time:'',duration: '',task:'',comment:'', mechanic:''
 
-    if (service.date === '' || service.time === '' || service.task === '') {
+   /*  if (service.date === '' || service.time === '' || service.task === '') {
       alert("Täytä pakolliset kentät")
-    } else {
+    } else { */
 
       const isMechanicNumber = (element) => element === service.mechanic;
       let mIndex = mechId.findIndex(isMechanicNumber);
@@ -72,7 +72,7 @@ export default function AddService({ addService, customerid }) {
 
       addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]);
       setOpen(false);
-    }
+   /*  } */
   }
 
 
@@ -135,7 +135,30 @@ export default function AddService({ addService, customerid }) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">uusi huoltotyö</DialogTitle>
         <DialogContent>
-       
+          <TextField
+            autoFocus
+            required
+            type="date"
+            margin="dense"
+            id="date"
+            name="date"
+            value={service.date}
+            onChange={inputChanged}
+            label=""
+            fullWidth
+
+          />
+          <TextField
+            required
+            type="time"
+            margin="dense"
+            id="time"
+            name="time"
+            value={service.time}
+            onChange={inputChanged}
+            label=""
+            fullWidth
+          />
           <TextField
             required
             type="number"
