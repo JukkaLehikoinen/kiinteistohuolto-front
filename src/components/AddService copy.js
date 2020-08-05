@@ -135,7 +135,30 @@ export default function AddService({ addService, customerid }) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">uusi huoltotyö</DialogTitle>
         <DialogContent>
-       
+          <TextField
+            autoFocus
+            required
+            type="date"
+            margin="dense"
+            id="date"
+            name="date"
+            value={service.date}
+            onChange={inputChanged}
+            label=""
+            fullWidth
+
+          />
+          <TextField
+            required
+            type="time"
+            margin="dense"
+            id="time"
+            name="time"
+            value={service.time}
+            onChange={inputChanged}
+            label=""
+            fullWidth
+          />
           <TextField
             required
             type="number"
