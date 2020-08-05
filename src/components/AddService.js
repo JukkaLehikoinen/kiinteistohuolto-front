@@ -50,6 +50,10 @@ export default function AddService({ addService, customerid }) {
       .then(data => {
         setMechanics(data)
         setService({ ...service, mechanic: data[0].mechanicid, date: date, time: time })
+        console.log(date)
+        console.log(time)
+        let dateConv = new Date(date + "T" + time).toISOString();
+        console.log(dateConv)
       })
       .catch(err => console.error(err))
 
@@ -68,8 +72,7 @@ export default function AddService({ addService, customerid }) {
 
       const isMechanicNumber = (element) => element === service.mechanic;
       let mIndex = mechId.findIndex(isMechanicNumber);
-
-
+      
       addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]);
       setOpen(false);
     }
@@ -138,7 +141,7 @@ export default function AddService({ addService, customerid }) {
           <TextField
             autoFocus
             required
-            type="date"
+            /* type="date" */
             margin="dense"
             id="date"
             name="date"
