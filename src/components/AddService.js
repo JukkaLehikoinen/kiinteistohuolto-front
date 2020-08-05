@@ -62,17 +62,18 @@ export default function AddService({ addService, customerid }) {
   const handleClose = () => {
     //date:'',time:'',duration: '',task:'',comment:'', mechanic:''
 
-   /*  if (service.date === '' || service.time === '' || service.task === '') {
+    if (service.date === '' || service.time === '' || service.task === '') {
       alert("Täytä pakolliset kentät")
-    } else { */
+    } else {
 
       const isMechanicNumber = (element) => element === service.mechanic;
-      let mIndex = mechId.findIndex(isMechanicNumber);
+      //let mIndex = mechId.findIndex(isMechanicNumber);
 
 
-      addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]);
+      /* addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]); */
+      addService(service, customerid, customer);
       setOpen(false);
-   /*  } */
+    }
   }
 
 
@@ -97,7 +98,7 @@ export default function AddService({ addService, customerid }) {
   }
 
 
-
+/* 
   let mechName = [];
   let mechId = [];
   let mechEmail = [];
@@ -114,7 +115,7 @@ export default function AddService({ addService, customerid }) {
   const mechs = mechName.map((mech) =>
     <option value={mech}>{mech}</option>
   )
-
+ */
 
   const mechChanged = (event) => {
     for (let i = 0; i < mechanics.length; i++) {
@@ -200,7 +201,7 @@ export default function AddService({ addService, customerid }) {
                 name: 'mechanic'
               }}
             >
-              {mechs}
+              {/* {mechs} */}
 
             </NativeSelect>
 
