@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kiinteistohuolto-front/precache-manifest.5b2896699c64f02842feccfb526e28f7.js"
+  "/kiinteistohuolto-front/precache-manifest.73b0d967fc7b0101b3f31fd1130b4721.js"
 );
 
 self.addEventListener('message', (event) => {
