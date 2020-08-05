@@ -50,11 +50,7 @@ export default function AddService({ addService, customerid }) {
       .then(data => {
         setMechanics(data)
         setService({ ...service, mechanic: data[0].mechanicid, date: date, time: time })
-        console.log(date)
-        console.log(time)
-        let dateConv = new Date(date + "T" + time).toISOString();
-        
-        console.log(dateConv)
+
       })
       .catch(err => console.error(err))
 

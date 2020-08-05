@@ -80,6 +80,7 @@ export default function CustomersList(props) {
 
         //let dateConv = new Date(customer.date + " " + customer.time).toISOString();
         let dateConv = new Date(customer.date + 'T' + customer.time+':00.000Z');
+        dateConv.setHours(dateConv.getHours(),dateConv.getMinutes()-180,0,0);
         let service = {
             time: dateConv, duration: customer.duration, task: customer.task, comment: customer.comment,
             customer: {
