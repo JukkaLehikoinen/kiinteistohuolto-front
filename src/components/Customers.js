@@ -78,8 +78,8 @@ export default function CustomersList(props) {
 
     const addService = (customer, custoId, customero, mechId, mechName, mechEmail, mechPhone) => {
 
-        let dateConv = new Date(customer.date + " " + customer.time).toISOString();
-        console.log(dateConv)
+        //let dateConv = new Date(customer.date + " " + customer.time).toISOString();
+        let dateConv = new Date(customer.date + 'T' + customer.time+':00.000Z');
         let service = {
             time: dateConv, duration: customer.duration, task: customer.task, comment: customer.comment,
             customer: {
@@ -136,7 +136,7 @@ export default function CustomersList(props) {
     const showFilteredFormat = (row) => {
         return (
             <div>
-                {moment(row.time).format("DD.MM.YYYY HH:mm:ss")}
+                {moment(row.time).format("DD.MM.YYYY HH:mm")}
             </div>
         )
     }

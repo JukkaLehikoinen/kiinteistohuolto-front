@@ -53,6 +53,7 @@ export default function AddService({ addService, customerid }) {
         console.log(date)
         console.log(time)
         let dateConv = new Date(date + "T" + time).toISOString();
+        
         console.log(dateConv)
       })
       .catch(err => console.error(err))
