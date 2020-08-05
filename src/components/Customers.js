@@ -77,7 +77,7 @@ export default function CustomersList(props) {
     }
 
     const addService = (customer, custoId, customero, mechId, mechName, mechEmail, mechPhone) => {
-        console.log(service)
+        
 
 
         let dateConv = new Date(customer.date + " " + customer.time).toISOString();
@@ -89,8 +89,8 @@ export default function CustomersList(props) {
             },
             mechanic: { mechanicid: mechId, name: mechName, email: mechEmail, phone: mechPhone }
         }
-            
-        fetch('https://kiinteistohuolto.herokuapp.com/addservice', {
+            console.log(service)
+      /*   fetch('https://kiinteistohuolto.herokuapp.com/addservice', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'
@@ -101,7 +101,8 @@ export default function CustomersList(props) {
         )
             .then(_ => showActivity(customero))
             .catch(err => console.error(err))
-    }
+    } */
+}
 
     const showActivity = (link) => {
 
