@@ -77,7 +77,7 @@ export default function CustomersList(props) {
     }
 
     const addService = (customer, custoId, customero, mechId, mechName, mechEmail, mechPhone) => {
-
+        console.log(service)
 
 
         let dateConv = new Date(customer.date + " " + customer.time).toISOString();
@@ -89,7 +89,7 @@ export default function CustomersList(props) {
             },
             mechanic: { mechanicid: mechId, name: mechName, email: mechEmail, phone: mechPhone }
         }
-            console.log(service)
+            
         fetch('https://kiinteistohuolto.herokuapp.com/addservice', {
             method: 'POST',
             headers: {
