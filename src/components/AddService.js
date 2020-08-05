@@ -67,11 +67,10 @@ export default function AddService({ addService, customerid }) {
     } else {
 
       const isMechanicNumber = (element) => element === service.mechanic;
-      //let mIndex = mechId.findIndex(isMechanicNumber);
+      let mIndex = mechId.findIndex(isMechanicNumber);
 
 
-      /* addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]); */
-      addService(service, customerid, customer);
+      addService(service, customerid, customer, mechId[mIndex], mechName[mIndex], mechEmail[mIndex], mechPhone[mIndex]);
       setOpen(false);
     }
   }
@@ -98,7 +97,7 @@ export default function AddService({ addService, customerid }) {
   }
 
 
-/* 
+
   let mechName = [];
   let mechId = [];
   let mechEmail = [];
@@ -115,7 +114,7 @@ export default function AddService({ addService, customerid }) {
   const mechs = mechName.map((mech) =>
     <option value={mech}>{mech}</option>
   )
- */
+
 
   const mechChanged = (event) => {
     for (let i = 0; i < mechanics.length; i++) {
@@ -201,7 +200,7 @@ export default function AddService({ addService, customerid }) {
                 name: 'mechanic'
               }}
             >
-              {/* {mechs} */}
+              {mechs}
 
             </NativeSelect>
 

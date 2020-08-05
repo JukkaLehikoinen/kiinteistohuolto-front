@@ -89,7 +89,7 @@ export default function CustomersList(props) {
             },
             mechanic: { mechanicid: mechId, name: mechName, email: mechEmail, phone: mechPhone }
         }
-        //    console.log(service)
+            console.log(service)
         fetch('https://kiinteistohuolto.herokuapp.com/addservice', {
             method: 'POST',
             headers: {
