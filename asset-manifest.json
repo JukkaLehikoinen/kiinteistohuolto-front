@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kiinteistohuolto-front/static/css/main.af0eaf77.chunk.css",
-    "main.js": "/kiinteistohuolto-front/static/js/main.1e13a7df.chunk.js",
-    "main.js.map": "/kiinteistohuolto-front/static/js/main.1e13a7df.chunk.js.map",
+    "main.js": "/kiinteistohuolto-front/static/js/main.308ad1c1.chunk.js",
+    "main.js.map": "/kiinteistohuolto-front/static/js/main.308ad1c1.chunk.js.map",
     "runtime-main.js": "/kiinteistohuolto-front/static/js/runtime-main.61baca62.js",
     "runtime-main.js.map": "/kiinteistohuolto-front/static/js/runtime-main.61baca62.js.map",
     "static/css/2.bfa46653.chunk.css": "/kiinteistohuolto-front/static/css/2.bfa46653.chunk.css",
     "static/js/2.0f8a5395.chunk.js": "/kiinteistohuolto-front/static/js/2.0f8a5395.chunk.js",
     "static/js/2.0f8a5395.chunk.js.map": "/kiinteistohuolto-front/static/js/2.0f8a5395.chunk.js.map",
     "index.html": "/kiinteistohuolto-front/index.html",
-    "precache-manifest.73b0d967fc7b0101b3f31fd1130b4721.js": "/kiinteistohuolto-front/precache-manifest.73b0d967fc7b0101b3f31fd1130b4721.js",
+    "precache-manifest.557a35ab303ead2706d8eb5ebbfaaaca.js": "/kiinteistohuolto-front/precache-manifest.557a35ab303ead2706d8eb5ebbfaaaca.js",
     "service-worker.js": "/kiinteistohuolto-front/service-worker.js",
     "static/css/2.bfa46653.chunk.css.map": "/kiinteistohuolto-front/static/css/2.bfa46653.chunk.css.map",
     "static/css/main.af0eaf77.chunk.css.map": "/kiinteistohuolto-front/static/css/main.af0eaf77.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.bfa46653.chunk.css",
     "static/js/2.0f8a5395.chunk.js",
     "static/css/main.af0eaf77.chunk.css",
-    "static/js/main.1e13a7df.chunk.js"
+    "static/js/main.308ad1c1.chunk.js"
   ]
 }
